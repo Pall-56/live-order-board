@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Order Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Live Order Board</h1>
+    <p class="subtitle">New → Preparing → Ready → Collected</p>
+  </header>
+
+  <section id="add-order-section">
+    <h2>Add New Order</h2>
+    <form id="add-order-form">
+      <label>Customer Name
+        <input type="text" id="customerName" required />
+      </label>
+
+      <label>Item Summary
+        <input type="text" id="itemSummary" required />
+      </label>
+
+      <label>Notes (optional)
+        <textarea id="notes" rows="3"></textarea>
+      </label>
+
+      <button type="submit">Add Order</button>
+    </form>
+  </section>
+
+  <main id="board">
+    <section class="column" data-status="New">
+      <h2>New</h2>
+      <div class="order-list" id="column-new"></div>
+    </section>
+
+    <section class="column" data-status="Preparing">
+      <h2>Preparing</h2>
+      <div class="order-list" id="column-preparing"></div>
+    </section>
+
+    <section class="column" data-status="Ready">
+      <h2>Ready</h2>
+      <div class="order-list" id="column-ready"></div>
+    </section>
+
+    <section class="column" data-status="Collected">
+      <h2>Collected</h2>
+      <div class="order-list" id="column-collected"></div>
+    </section>
+  </main>
+<script type="module">
+  import { initializeApp } 
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore } 
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAAKt2yr8V8wcLXZvKQrb0c96sLVeUcQCE",
+    authDomain: "live-order-board.firebaseapp.com",
+    projectId: "live-order-board",
+    storageBucket: "live-order-board.appspot.com",
+    messagingSenderId: "829344494110",
+    appId: "1:829344494110:web:64c44932ac3c46b347b40f"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.db = getFirestore(app);
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
