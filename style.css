@@ -1,0 +1,7 @@
+body { background:#0f172a; color:white; font-family:sans-serif; padding:20px; }
+h1 { text-align:center; }
+#board { display:flex; gap:10px; margin-top:20px; }
+.column { flex:1; background:#1e293b; padding:10px; border-radius:8px; }
+.order-card { background:#334155; padding:10px; border-radius:6px; margin-bottom:10px; }
+button { padding:8px; background:#22c55e; border:none; border-radius:5px; }
+input, textarea { width:100%; padding:8px; margin:5px 0; border-radius:5px; }
