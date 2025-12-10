@@ -60,6 +60,7 @@ function renderOrders(orders) {
       <h3>${order.customerName}</h3>
       <p><strong>Items:</strong> ${order.itemSummary}</p>
       ${order.notes ? `<p><strong>Notes:</strong> ${order.notes}</p>` : ""}
+      <p><strong>Time:</strong> ${new Date(order.createdAt).toLocaleString()}</p>
       <p><strong>Status:</strong> ${order.status}</p>
       <div class="move-buttons">
         ${createButtons(order)}
